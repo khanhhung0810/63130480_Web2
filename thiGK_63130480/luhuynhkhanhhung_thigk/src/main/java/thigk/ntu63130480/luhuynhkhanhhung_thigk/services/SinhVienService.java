@@ -10,8 +10,8 @@ public class SinhVienService {
 
     // Hàm khởi tạo với hard-code dữ liệu
     public SinhVienService() {
-        danhSachSinhVien.add(new SinhVien("SV01", "Nguyen Van A", 7.0));
-        danhSachSinhVien.add(new SinhVien("SV02", "Le Thi B", 8.5));
+        danhSachSinhVien.add(new SinhVien("SV01", "Nguyễn Văn Trọng", 7.0));
+        danhSachSinhVien.add(new SinhVien("SV02", "Lê Thị Hà", 8.5));
     }
 
     // Tìm sinh viên thông qua mã sinh viên

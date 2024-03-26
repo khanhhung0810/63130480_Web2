@@ -26,4 +26,6 @@ public class SinhVienController {
         // Trả về view index.html
         return "index";
     }
+
+    
 }
