@@ -22,7 +22,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Tìm kiếm</a>
           </li>
-          <!-- Add more links as needed -->
+         
         </ul>
       </div>
     </nav>
@@ -54,23 +54,25 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    <!-- Add your carousel here -->
+   
 
     <!-- List of students -->
     <div class="container-fluid">
-        <div class="row">  <!-- Thêm class 'row'-->
+        <div class="row">
             <div th:each="sinhVien : ${sinhVienList}" class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <div class="card-header">
+                    <img th:src="@{/img/gamer.png}" class="card-img-top" alt="icon_user"height="200" width="50">
+                    <div class="card-body">
                         Thông tin sinh viên
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Họ tên: <span th:text="${sinhVien.hoVaTen}"></span></li>
+                        <li class="list-group-item bold">Họ tên: <span th:text="${sinhVien.hoVaTen}"></span></li>
                         <li class="list-group-item">Lớp: <span th:text="${sinhVien.lop}"></span></li>
                         <li class="list-group-item">Khoa: <span th:text="${sinhVien.khoa}"></span></li>
                         <li class="list-group-item">Trường: <span th:text="${sinhVien.truong}"></span></li>
                     </ul>
-                </div>
+                  </div>
+
             </div>
         </div> 
     </div>
