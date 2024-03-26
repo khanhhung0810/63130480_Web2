@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import thigk.ntu63130480.luhuynhkhanhhung_thigk.models.SinhVien;
@@ -27,5 +29,15 @@ public class SinhVienController {
         return "index";
     }
 
+    @GetMapping("/themmoi")
+    public String themSinhVien(Model model) {
+        model.addAttribute("sinhVien", new SinhVien());
+        return "themmoi";
+    }
+    @PostMapping("/themmoi")
+    public String themSinhVien(@ModelAttribute SinhVien sinhVien) {
+    sinhVienService.themSinhVien(sinhVien);
+    return "redirect:/home  ";
+    }
     
 }

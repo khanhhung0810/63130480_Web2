@@ -10,17 +10,17 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Danh mục</a>
+      <a class="navbar-brand" href="#">Menu</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" th:href="@{/home}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Thông tin</a>
+            <a class="nav-link" th:href="@{/themmoi}">Thêm mới</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Học phí</a>
+            <a class="nav-link" href="#">Tìm kiếm</a>
           </li>
           <!-- Add more links as needed -->
         </ul>
@@ -65,9 +65,10 @@
                         Thông tin sinh viên
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Mã số sinh viên:<span th:text="${sinhVien.maSoSV}"></span></li>
                         <li class="list-group-item">Họ tên: <span th:text="${sinhVien.hoVaTen}"></span></li>
-                        <li class="list-group-item">Điểm tích lũy: <span th:text="${sinhVien.diemSo}"></span></li>
+                        <li class="list-group-item">Lớp: <span th:text="${sinhVien.lop}"></span></li>
+                        <li class="list-group-item">Khoa: <span th:text="${sinhVien.khoa}"></span></li>
+                        <li class="list-group-item">Trường: <span th:text="${sinhVien.truong}"></span></li>
                     </ul>
                 </div>
             </div>

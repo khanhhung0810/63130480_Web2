@@ -4,7 +4,13 @@ public class SinhVien {
     private String maSoSV;
     private String hoVaTen;
     private double diemSo;
+    private String lop;
+    private String khoa;
+    private String truong;
 
+    public SinhVien() {
+        
+    }
 
     public String getMaSoSV() {
 		return maSoSV;
@@ -27,10 +33,33 @@ public class SinhVien {
 		this.diemSo = diemSo;
 	}
 
-	public SinhVien(String maSoSV, String hoVaTen, double diemSo) {
+    public String getLop() {
+		return lop;
+	}
+	public void setLop(String lop) {
+		this.lop = lop;
+	}
+
+    public String getKhoa() {
+		return khoa;
+	}
+	public void setKhoa(String khoa) {
+		this.khoa = khoa;
+	}
+
+    public String getTruong() {
+		return truong;
+	}
+	public void setTruong(String truong) {
+		this.truong = truong;
+	}
+
+	public SinhVien(String maSoSV, String hoVaTen, double diemSo, String lop, String khoa, String truong) {
 		this.maSoSV = maSoSV;
 		this.hoVaTen = hoVaTen;
 		this.diemSo = diemSo;
+		this.lop = lop;
+		this.khoa = khoa;
+		this.truong = truong;
 	}
 }
-    
