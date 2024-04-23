@@ -1,6 +1,6 @@
-<!-- # 63130480_Web2
+# 63130480_Web2
 
-#### Trang Home :
+<!-- #### Trang Home :
 ![layout](Demo_Web_ThiGK/TrangHome.jpg)
 ####  Trang thêm mới sinh viên :
 ![layout](Demo_Web_ThiGK/ThemMoiSV.jpg)
