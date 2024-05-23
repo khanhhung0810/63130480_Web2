@@ -34,6 +34,16 @@ public class Product {
     @Column(name = "luu_y", columnDefinition = "TEXT")
     private String luuY;
 
+    private String anh;
+
+    public void setAnh(String anh) {
+        this.anh = anh;
+    }
+
+    public String getAnh() {
+        return anh;
+    }
+
     public int getId() {
         return id;
     }
