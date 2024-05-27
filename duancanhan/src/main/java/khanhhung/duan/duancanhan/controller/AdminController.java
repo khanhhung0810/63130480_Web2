@@ -10,4 +10,9 @@ public class AdminController {
     public String index(){
         return "admin/index";
     }
+
+    @GetMapping("/add-product")
+    public String add(){
+        return "admin/add-product";
+    }
 }
