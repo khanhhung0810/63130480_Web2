@@ -1,31 +1,48 @@
 package khanhhung.duan.duancanhan.model;
 
+import java.util.Set;
+import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Entity(name="categories")
+@Entity
+@Table(name="categories")
 public class Category {
-    @Id
-    private int category_id;
-    private String category_name;
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+    @Column(name = "category_id")
+    private int categoryId;
+
+    @Column(name = "category_name")
+    private String categoryName;
 
 
-    // getter and setter methods
-    public int getCategory_id() {
-        return category_id;
+    @OneToMany(mappedBy = "category")
+    private Set<Product> products;
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
+
+    
+
 
     
 }
