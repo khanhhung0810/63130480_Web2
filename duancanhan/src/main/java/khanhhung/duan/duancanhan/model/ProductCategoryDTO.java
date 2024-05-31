@@ -1,68 +1,36 @@
 package khanhhung.duan.duancanhan.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import java.util.Set;
-import jakarta.persistence.OneToMany;
-
-@Entity
-@Table(name = "products")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "product_id")
-    private int productId;
-
-    @Column(name = "name")
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
-    private Category category;
-
-    @Column(name = "hoat_chat")
-    private String hoatChat;
-
-    @Column(name = "chi_dinh", columnDefinition = "TEXT")
-    private String chiDinh;
-
-    @Column(name = "dang_bao_che")
-    private String dangBaoChe;
-
-    @Column(name = "noi_san_xuat")
-    private String noiSanXuat;
-
-    @Column(name = "luu_y", columnDefinition = "TEXT")
-    private String luuY;
-
-    @Column(name = "anh")
-    private String anh;
-
-    @Column(name = "gia_tien")
-    private int giaTien;
+public class ProductCategoryDTO {
     
-    @OneToMany(mappedBy = "product")
-    private Set<OrderDetail> orderDetails;
+    private Integer productId;
+    private String name;
+    private String categoryName;
+    private String hoatChat;
+    private String chiDinh;
+    private String dangBaoChe;
+    private String noiSanXuat;
+    private String luuY;
+    private String anh;
+    private int giaTien;
 
-    public int getGiaTien() {
-        return giaTien;
-    }
-
-    public void setGiaTien(int giaTien) {
+    public ProductCategoryDTO(Integer productId, String name, String categoryName, String hoatChat, String chiDinh, String dangBaoChe, String noiSanXuat, String luuY, String anh, int giaTien) {
+        this.productId = productId;
+        this.name = name;
+        this.categoryName = categoryName;
+        this.hoatChat = hoatChat;
+        this.chiDinh = chiDinh;
+        this.dangBaoChe = dangBaoChe;
+        this.noiSanXuat = noiSanXuat;
+        this.luuY = luuY;
+        this.anh = anh;
         this.giaTien = giaTien;
     }
 
-    public int getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
@@ -74,12 +42,12 @@ public class Product {
         this.name = name;
     }
 
-    public Category getCategory() {
-        return category;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getHoatChat() {
@@ -129,5 +97,14 @@ public class Product {
     public void setAnh(String anh) {
         this.anh = anh;
     }
+
+    public int getGiaTien() {
+        return giaTien;
+    }
+
+    public void setGiaTien(int giaTien) {
+        this.giaTien = giaTien;
+    }
+
 
 }

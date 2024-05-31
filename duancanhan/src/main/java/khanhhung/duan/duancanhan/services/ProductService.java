@@ -11,8 +11,11 @@ public class ProductService {
 
     @Autowired
     private ProductRepository pRepo;
-    public void save(Product p){
-        pRepo.save(p);
+    
+    public Product createProduct(Product product) {
+        return pRepo.save(product);
     }
+
+   
 
 }

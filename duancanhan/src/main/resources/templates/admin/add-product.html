@@ -30,13 +30,13 @@
                 <li class="nav-item active">
                     <a class="nav-link" th:href="@{/admin}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Quản lý thuốc</span></a>
+                        <span>Quản lý sản phẩm</span></a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/admin}">
+                    <a class="nav-link" th:href="@{/admin-category}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Quản lý loại thuốc</span></a>
+                        <span>Quản lý danh mục</span></a>
                 </li>
                 <!-- Sidebar Toggler (Sidebar) -->
                 <div class="text-center d-none d-md-inline">
@@ -137,15 +137,17 @@
                     <div class="container-fluid">
                         <div class="container my-5 p-5" style="border:1px solid black;">
                             <h4 class="text-center">Thêm sản phẩm mới</h4>
-                            <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
+                            <form class="col-md-4 offset-md-4" th:action="@{/add-product}" method="post" >
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Tên thuốc
                                         </label> <input type="text" class="form-control" name="name">	
-                                </div>
+                                </div>  
                                 
                                 <div class="mb-3">
-                                    <label for="category" class="form-label">Loại thuốc
-                                        </label> <input type="text" class="form-control" name="category">	
+                                    <label for="category" class="form-label">Loại thuốc</label> 
+                                    <select class="form-control" id="category" name="category">
+                                        <option th:each="category : ${categories}" th:value="${category}" th:text="${category}"></option>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="hoatChat" class="form-label">Hoạt chất
@@ -168,11 +170,16 @@
                                         </label> <input type="text" class="form-control" name="luuY">	
                                 </div>
                                 <div class="mb-3">
+                                    <label for="giaTien" class="form-label">Giá tiền
+                                        </label> <input type="text" class="form-control" name="giaTien">	
+                                </div>
+                                <div class="mb-3">
                                     <label for="anh" class="form-label">Ảnh
-                                        </label> <input type="text" class="form-control" name="anh">	
+                                        </label> <input type="file" class="form-control" name="anh">	
                                 </div>
                                 
-                                <button type="submit" class="btn btn-primary">Tạo</button>
+                                <button type="submit" class="btn btn-primary">Thêm </button>
+                                
                             </form>
                         </div>
                     </div>
