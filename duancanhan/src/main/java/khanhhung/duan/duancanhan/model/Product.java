@@ -8,6 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Set;
 import jakarta.persistence.OneToMany;
 
@@ -49,6 +52,11 @@ public class Product {
     
     @OneToMany(mappedBy = "product")
     private Set<OrderDetail> orderDetails;
+
+     public String getFormattedGiaTien() {
+        NumberFormat formatter = NumberFormat.getInstance(new Locale("vi", "VN"));
+        return formatter.format(giaTien) + " vnđ";
+    }
 
     public int getGiaTien() {
         return giaTien;

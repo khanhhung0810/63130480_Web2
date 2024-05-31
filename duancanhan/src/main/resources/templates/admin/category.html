@@ -4,7 +4,7 @@
     <head th:replace="fragments/admin/head :: head"></head>
 
     <body id="page-top">
-        
+
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -63,8 +63,6 @@
                             <i class="fa fa-bars"></i>
                         </button>
 
-                        
-
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
@@ -119,16 +117,16 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-                        <div th:if="${successMessage}" class="alert alert-success">
+                        <div th:if="${successMessage}"
+                            class="alert alert-success">
                             <p th:text="${successMessage}"></p>
-                            
+
                         </div>
                         <!-- Page Heading -->
                         <div
                             class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Quản lý sản
-                                phẩm</h1>
-                            <a th:href="@{/add-product}"
+                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                            <a th:href="@{/add-category}"
                                 class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                     class="fas fa-download fa-sm text-white-50"></i>Thêm
                                 mới</a>
@@ -136,7 +134,6 @@
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
-
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered"
@@ -145,66 +142,36 @@
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Tên</th>
-                                                <th>Loại sản phẩm</th>
-                                                <th>Hoạt chất</th>
-                                                <th>Chỉ định</th>
-                                                <th>Dạng bào chế</th>
-                                                <th>Nơi sản xuất</th>
-                                                <th>Lưu ý</th>
-                                                <th>Giá tiền</th>
-                                                <th>Ảnh</th>
+                                                <th>Tên danh mục</th>
                                                 <th>Chức năng</th>
+
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Tên</th>
-                                                <th>Loại sản phẩm</th>
-                                                <th>Hoạt chất</th>
-                                                <th>Chỉ định</th>
-                                                <th>Dạng bào chế</th>
-                                                <th>Nơi sản xuất</th>
-                                                <th>Lưu ý</th>
-                                                <th>Giá tiền</th>
-                                                <th>Ảnh</th>
+                                                <th>Tên danh mục</th>
                                                 <th>Chức năng</th>
                                             </tr>
                                         </tfoot>
-                                        <tbody>
-                                            <tr th:each="product : ${products}">
+                                        <tbody
+                                            th:each="category : ${categories}">
+                                            <tr>
                                                 <td
-                                                    th:text="${product.productId}"></td>
+                                                    th:text="${category.categoryId}"></td>
                                                 <td
-                                                    th:text="${product.name}"></td>
-                                                <td th:text="${product.category.categoryName}"></td>
-                                                <td
-                                                    th:text="${product.hoatChat}"></td>
-                                                <td
-                                                    th:text="${product.chiDinh}"></td>
-                                                <td
-                                                    th:text="${product.dangBaoChe}"></td>
-                                                <td
-                                                    th:text="${product.noiSanXuat}"></td>
-                                                <td
-                                                    th:text="${product.luuY}"></td>
-                                                <td
-                                                    th:text="${product.formattedGiaTien}"></td>
-                                                <td>
-                                                    <img
-                                                        th:src="@{'/images/' + ${product.anh}}"
-                                                        alt width="100">
-                                                </td>
+                                                    th:text="${category.categoryName}"></td>
                                                 <td style="white-space:nowrap">
-                                                    <a th:href="@{/edit/{id}(id=${product.productId})}" class="btn btn-primary">Sửa</a>
+
                                                     <a
-                                                        th:href="@{/delete/{id}(id=${product.productId})}"
+                                                        th:href="@{/delete/{id}(id=${category.categoryId})}"
                                                         class="btn btn-primary"
                                                         onclick="return confirm('Bạn có chắc không ?')">Xóa</a>
-                                                        
+
                                                 </td>
+
                                             </tr>
+
                                         </tbody>
                                     </table>
                                 </div>

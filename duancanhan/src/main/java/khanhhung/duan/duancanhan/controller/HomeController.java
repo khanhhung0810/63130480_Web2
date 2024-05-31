@@ -21,7 +21,9 @@ public class HomeController {
     private ProductService productService;
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        List<Product> products = repo.findAll();
+        model.addAttribute("products", products);
         return "home/index";
     }
 

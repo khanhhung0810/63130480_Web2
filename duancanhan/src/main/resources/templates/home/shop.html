@@ -24,7 +24,7 @@
               <div class="col-sm-6 col-lg-4 text-center item mb-4" th:each="product : ${products}">
                   <a th:href="@{/shopdetail/{id}(id=${product.productId})}"> <img th:src="@{'/images/' + ${product.anh}}" alt="Image"  width="300"></a>
                   <h3 class="text-dark"><a href="shop-single.html" th:text="${product.name}"></a></h3>
-                  <p class="price" th:text="@{${product.giaTien} + 'Vnđ' }"></p>
+                  <p class="price" th:text="${product.formattedGiaTien}"></p>
               </div>
           
             
