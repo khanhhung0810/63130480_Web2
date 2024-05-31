@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import khanhhung.duan.duancanhan.model.Category;
 import khanhhung.duan.duancanhan.model.Product;
 import khanhhung.duan.duancanhan.services.CategoryService;
 import khanhhung.duan.duancanhan.services.ProductService;
@@ -25,8 +26,10 @@ public class ProductController {
 
     @GetMapping("/add-product")
     public String addProductView(Model model){
-        List<String> categories = categoryService.getAllCategories();
+        List<Category> categories = categoryService.getAllCategories();
         model.addAttribute("categories", categories);
+        model.addAttribute("product", new Product());
+        
         return "admin/add-product";
     }
 
