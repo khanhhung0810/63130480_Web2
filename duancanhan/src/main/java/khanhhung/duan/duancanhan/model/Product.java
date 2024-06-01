@@ -18,7 +18,7 @@ import jakarta.persistence.OneToMany;
 @Table(name = "products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private int productId;
 
@@ -53,7 +53,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<OrderDetail> orderDetails;
 
-     public String getFormattedGiaTien() {
+    public String getFormattedGiaTien() {
         NumberFormat formatter = NumberFormat.getInstance(new Locale("vi", "VN"));
         return formatter.format(giaTien) + " vnđ";
     }

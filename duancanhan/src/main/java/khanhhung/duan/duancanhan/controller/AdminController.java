@@ -10,7 +10,7 @@ import khanhhung.duan.duancanhan.model.Category;
 import khanhhung.duan.duancanhan.model.Product;
 import khanhhung.duan.duancanhan.repository.CategoryRepository;
 import khanhhung.duan.duancanhan.repository.ProductRepository;
-import khanhhung.duan.duancanhan.services.CategoryService;
+// import khanhhung.duan.duancanhan.services.CategoryService;
 
 @Controller
 public class AdminController {

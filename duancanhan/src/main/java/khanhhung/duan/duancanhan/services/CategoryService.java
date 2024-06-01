@@ -21,4 +21,7 @@ public class CategoryService {
         return cRepo.save(category);
     }
 
+    public void deleteCategoryById(int categoryId) {
+        cRepo.deleteById(categoryId);
+    }
 }
