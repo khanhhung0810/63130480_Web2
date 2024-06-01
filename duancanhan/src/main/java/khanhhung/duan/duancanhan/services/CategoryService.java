@@ -24,4 +24,12 @@ public class CategoryService {
     public void deleteCategoryById(int categoryId) {
         cRepo.deleteById(categoryId);
     }
+
+    public Integer getCategoryIdByName(String categoryName) {
+        Category category = cRepo.findByCategoryName(categoryName);
+        if (category != null) {
+            return category.getCategoryId();
+        }
+        return null; 
+    }
 }
